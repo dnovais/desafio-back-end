@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  transaction_type: one
+  company: one
+  occurrence_at: 2019-10-01
+  value: 1
+  card_number: 1
+  cpf: 1
+
+two:
+  transaction_type: two
+  company: two
+  occurrence_at: 2019-10-01
+  value: 1
+  card_number: 1
+  cpf: 1
