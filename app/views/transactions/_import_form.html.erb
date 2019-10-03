@@ -1,0 +1,5 @@
+<%= form_tag 'transactions/import_file', multipart: true do %>
+  <%= label_tag "file", "Arquivo" %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Prosseguir" %>
+<% end %>

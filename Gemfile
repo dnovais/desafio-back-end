@@ -43,6 +43,7 @@ group :test do
   gem 'chromedriver-helper'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 group :development do
