@@ -12,6 +12,7 @@ Em sua máguina deverá ter instalado:
 
   ## Instalando gems e dependências
   >yarn install
+  
   >bundle install
  
   ## Levantando servidor e sidekiq
