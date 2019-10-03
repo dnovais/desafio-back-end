@@ -14,6 +14,15 @@ Em sua máguina deverá ter instalado:
   >yarn install
   
   >bundle install
+  ## Banco de dados
+  Criar o banco de dados:
+  > rails db:create
+  
+  Rodar as migrations:
+  > rails db:migrate
+  
+  Rodar o seed:
+  > rails db:seed
  
   ## Levantando servidor e sidekiq
   Para levantar o servidor da aplicação basta rodar:
