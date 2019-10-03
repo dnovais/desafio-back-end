@@ -1,0 +1,10 @@
+<%= form_tag 'transactions/import_file', multipart: true do %>
+  <div class="form-group">
+    <div class="input-group input-file">
+      <%= file_field_tag :file, class: "form-control", placeholder: "Escolha um arquivo..." %>
+    </div>
+  </div>
+  <div class="form-group">
+  <%= submit_tag "Importar" %>
+  </div>
+<% end %>

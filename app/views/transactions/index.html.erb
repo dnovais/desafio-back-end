@@ -1,0 +1,53 @@
+<section class="jumbotron text-center">
+    <div class="container">
+      <h1 class="jumbotron-heading">Movimentações finanaceiras</h1>
+      <p class="lead text-muted">Acompanhe suas movimentações finanaceiras.</p>
+      <div class="row justify-content-md-center">
+        <%= render 'transactions/import_form' %>
+      </div>
+    </div>
+  </section>
+
+<div class="d-flex justify-content-between p-3 my-3 text-white-50 bg-teal rounded box-shadow">
+  <div class="lh-100">
+  </div>
+  <div class="lh-100">
+    <p>Valor total disponível: <%= number_to_currency(@total_value) %></p>
+  </div>
+</div>
+
+<div class="album py-5 bg-light">
+  <div class="container">
+    <div class="row">
+
+      <% if @transactions.present? %>
+        <table class="table">
+          <tr>
+            <th>Empresa</th>
+            <th>Proprietário da empresa</th>
+            <th>Transação</th>
+            <th>CPF</th>
+            <th>Ocorreu em</th>
+            <th>Sinal</th>
+            <th>Valor</th>
+          </tr>
+            <% @transactions.each do |transaction| %>
+              <tr>
+                <td><%= transaction.company.name %></td>
+                <td><%= transaction.company.owner_name %></td>
+                <td><%= transaction.transaction_type.description %></td>
+                <td><%= transaction.cpf %></td>
+                <td><%= l transaction.occurrence_at %></td>
+                <td><%= transaction.transaction_type.sign %></td>
+                <td><%= number_to_currency(transaction.value) %></td>
+              </tr>
+            <%end%>
+        </table>
+        <%= paginate @transactions %>
+      <%else%>
+        <span>Ainda não existem transações importadas.</span>
+      <%end%>
+
+    </div>
+  </div>
+</div>
