@@ -12,9 +12,9 @@ module ImportFileServices
 
     def import_file
       return raise "file does not exist" if @file.blank?
-
+      file = @file.read
       ActiveRecord::Base.transaction do
-        @file.each_line do |line|
+        file.each_line do |line|
           parser_and_create(line)
         end
       end
